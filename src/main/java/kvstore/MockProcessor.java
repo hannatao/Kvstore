@@ -4,12 +4,12 @@ import   cn.helium.kvstore.processor.Processor;
 import   java.util.HashMap;
 import   java.util.Map;
 
-public     class     MockProcessor     implements     Processor    {
-	  Map < String ,     Map < String , String >>    store    =     new     HashMap <>();   
+public class MockProcessor implements Processor{
+	  Map < String , Map < String , String >>store = new HashMap <>();   
 	  @Override
-	  public Map < String , String >get ( String    key )    {
+	  public Map < String , String > get ( String key ){
 	        Map < String , String > record = store . get ( key );
-	        return    record;  
+	        return record;  
 	  }
 	  @Override
 	  public synchronized boolean put ( String key , Map < String , String > value ){
@@ -22,8 +22,8 @@ public     class     MockProcessor     implements     Processor    {
 	        return true;
 	 }
 	  @Override
-	  public byte []process ( byte []inupt )    {
-	        System . out . println ( "receive   info:   " + new String ( inupt ));  
+	  public byte [] process ( byte []inupt ){
+	        System . out . println ( "receive info:" + new String ( inupt ));  
 	        return "received!" . getBytes ();
 	 }
 	}
