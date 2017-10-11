@@ -1,8 +1,8 @@
-package kvstore;
+package cn.helium.kvstore.processor;
 
-import   cn.helium.kvstore.processor.Processor; 
-import   java.util.HashMap;
-import   java.util.Map;
+import cn.helium.kvstore.processor.Processor;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MockProcessor implements Processor{
 	  Map < String , Map < String , String >>store = new HashMap <>();   
@@ -18,12 +18,12 @@ public class MockProcessor implements Processor{
 	 }
 	  @Override
 	  public synchronized boolean batchPut(
-	        Map < String , Map < String , String >> records ){store . putAll ( records );
+	        Map <String, Map < String , String >> records ){store.putAll ( records );
 	        return true;
 	 }
 	  @Override
 	  public byte [] process ( byte []inupt ){
-	        System . out . println ( "receive info:" + new String ( inupt ));  
-	        return "received!" . getBytes ();
+	        System.out.println ( "receive info:" + new String ( inupt ));  
+	        return "received!".getBytes ();
 	 }
-	}
+}
