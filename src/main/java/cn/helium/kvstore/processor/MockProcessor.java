@@ -2,6 +2,7 @@ package cn.helium.kvstore.processor;
 
 import cn.helium.kvstore.processor.Processor;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MockProcessor implements Processor{
@@ -26,4 +27,14 @@ public class MockProcessor implements Processor{
 	        System.out.println ( "receive info:" + new String ( inupt ));  
 	        return "received!".getBytes ();
 	 }
+	@Override
+	public int count(Map<String, String> arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public Map<Map<String, String>, Integer> groupBy(List<String> arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
